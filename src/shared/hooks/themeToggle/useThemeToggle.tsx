@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocalStorage } from '@shared/hooks/useLocalStorage';
+import { useLocalStorage } from '@shared/hooks';
 
 /**
  * Manage theme toggling between light and dark modes.
