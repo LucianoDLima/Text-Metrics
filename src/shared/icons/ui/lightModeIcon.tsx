@@ -10,7 +10,7 @@ export function LightModeIcon({ ...props }: ComponentPropsWithoutRef<'svg'>) {
       viewBox='0 0 22 22'
       {...props}
     >
-      <g clip-path='url(#a)'>
+      <g>
         <path
           stroke='#fff'
           strokeLinecap='round'
@@ -20,12 +20,10 @@ export function LightModeIcon({ ...props }: ComponentPropsWithoutRef<'svg'>) {
         />
       </g>
       <defs>
-        <clipPath id='a'>
-          <path
-            fill='#fff'
-            d='M0 0h22v22H0z'
-          />
-        </clipPath>
+        <path
+          fill='#fff'
+          d='M0 0h22v22H0z'
+        />
       </defs>
     </svg>
   );
