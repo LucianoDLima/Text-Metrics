@@ -1,0 +1,10 @@
+:root {
+  @for $i from 0 through 18 {
+    $lightness: 100% - ($i * 5%);
+    $index: $i * 50;
+    --rclr-neutral-#{$index}: #{hsl(235, 14%, $lightness)};
+    --rclr-purple-#{$index}: #{hsl(274, 90%, $lightness)};
+    --rclr-yellow-#{$index}: #{hsl(37, 100%, $lightness)};
+    --rclr-orange-#{$index}: #{hsl(15, 99%, $lightness)};
+  }
+}
