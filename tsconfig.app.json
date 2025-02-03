@@ -31,5 +31,5 @@
       "@shared/*": ["src/shared/*"]
     }
   },
-  "include": ["src"]
+  "include": ["cypress","src"]
 }
