@@ -1,0 +1,39 @@
+:root {
+  --fm-primary: 'Roboto', sans-serif;
+
+  --fs-heading-lg: 4rem;
+  --fs-heading-md: 2.5rem;
+  --fs-body-lg: 1.5rem;
+  --fs-body-md: 1.25rem;
+  --fs-body-sm: 1rem;
+}
+
+.fs-heading--lg {
+  font-size: clamp(2.5rem, 4.5vw + 1rem, 4rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.fs-heading--mg {
+  font-size: var(--fs-heading-md);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.fs-body--lg {
+  font-size: var(--fs-body-lg);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.fs-body--md {
+  font-size: var(--fs-body-md);
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.fs-body--sm {
+  font-size: var(--fs-body-sm);
+  font-weight: 400;
+  letter-spacing: -1px;
+}
