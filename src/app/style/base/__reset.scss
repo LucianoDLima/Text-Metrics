@@ -54,7 +54,8 @@ picture {
 /* Inherit fonts for inputs and buttons */
 input,
 button,
-select {
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;

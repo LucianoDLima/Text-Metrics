@@ -8,3 +8,27 @@
     --rclr-orange-#{$index}: #{hsl(15, 99%, $lightness)};
   }
 }
+
+.text-clr--primary {
+  color: var(--clr-text-primary);
+}
+
+.text-clr--secondary {
+  color: var(--clr-text-secondary);
+}
+
+.bg-clr--primary {
+  background-color: var(--clr-bg-primary);
+}
+
+.bg-clr--secondary {
+  background-color: var(--clr-bg-secondary);
+}
+
+.bg-clr--tertiary {
+  background-color: var(--clr-bg-tertiary);
+}
+
+.border-clr--primary {
+  border-color: var(--clr-border-primary);
+}

@@ -11,7 +11,10 @@ export function Header() {
   const { theme, toggleTheme } = useThemeToggle();
 
   return (
-    <header className='header' data-testid='header'>
+    <header
+      className='header'
+      data-testid='header'
+    >
       {theme === 'light' ? (
         <LightModeLogoIcon data-testid='light-logo' />
       ) : (
@@ -20,7 +23,7 @@ export function Header() {
 
       <button
         onClick={toggleTheme}
-        className='header__theme-toggle'
+        className='header__theme-toggle bg-clr--secondary'
         data-testid='theme-toggle'
       >
         {theme === 'light' ? (

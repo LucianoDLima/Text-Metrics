@@ -4,14 +4,22 @@
   --clr-bg-primary: var(--rclr-neutral-900);
   --clr-bg-secondary: var(--rclr-neutral-850);
   --clr-bg-tertiary: var(--rclr-neutral-800);
-  --clr-text-primary: var(--rclr-neutral-100);
-  --clr-text-secondary: var(--rclr-neutral-50);
+
+  --clr-text-primary: var(--rclr-neutral-50);
+  --clr-text-secondary: var(--rclr-neutral-150);
+
+  --clr-border-primary: var(--rclr-neutral-800);
 }
 
 [data-theme='light'] {
   background: url('/assets/images/bg-light-theme.png');
 
   --clr-bg-primary: var(--rclr-neutral-50);
-  --clr-bg-secondary: var(--rclr-neutral-850);
+  --clr-bg-secondary: var(--rclr-neutral-50);
   --clr-bg-tertiary: var(--rclr-neutral-100);
+
+  --clr-text-primary: var(--rclr-neutral-900);
+  --clr-text-secondary: var(--rclr-neutral-800);
+
+  --clr-border-primary: var(--rclr-neutral-100);
 }
