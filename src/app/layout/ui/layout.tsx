@@ -6,7 +6,12 @@ export function Layout() {
   return (
     <div className='wrapper'>
       <Header />
-      <Hero />
+
+      <main className='block'>
+        <section className='block__hero'>
+          <Hero />
+        </section>
+      </main>
     </div>
   );
 }
