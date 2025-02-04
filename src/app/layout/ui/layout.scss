@@ -3,6 +3,7 @@ body {
 
   background-color: var(--fallback-background-color);
   color: var(--clr-text-primary);
+  font-family: var(--fm-primary);
 }
 
 .wrapper {
@@ -11,4 +12,14 @@ body {
 
   width: min(var(--max-width), 100% - var(--padding));
   margin-inline: auto;
+}
+
+.block {
+  --separator: 3rem;
+
+  margin-top: var(--separator);
+
+  &__hero {
+    margin-bottom: var(--separator);
+  }
 }
