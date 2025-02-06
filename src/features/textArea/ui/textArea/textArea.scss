@@ -1,0 +1,55 @@
+@use '@app/style/mixin/_breakpoint' as *;
+
+.text-area {
+  --mobile-gap: 10px;
+  --desktop-gap: 24px;
+
+  &__input-wrapper {
+    margin-bottom: 16px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 12.5rem;
+    padding: 20px;
+    border-radius: 0.75rem;
+    border-width: 2px;
+    resize: none;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: var(--mobile-gap);
+
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    form {
+      display: flex;
+      gap: var(--desktop-gap);
+
+      @include tablet {
+        gap: var(--mobile-gap);
+        flex-direction: column;
+      }
+    }
+
+    &__limit-input {
+      input {
+        position: absolute;
+        max-width: 3.4375rem;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        border-width: 1px;
+        border-style: solid;
+        top: -3px;
+        background-color: transparent;
+        text-align: center;
+      }
+    }
+  }
+}

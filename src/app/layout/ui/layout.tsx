@@ -1,7 +1,7 @@
 import { Header } from '@widgets/header';
 import './layout.scss';
 import { Hero } from '@widgets/hero';
-import { TextArea } from '@widgets/textArea';
+import { TextArea } from '@features/textArea';
 
 export function Layout() {
   return (
