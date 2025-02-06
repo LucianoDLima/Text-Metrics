@@ -34,7 +34,8 @@ label {
 }
 
 /* Remove default button styling */
-button {
+button,
+input {
   border: 0;
 }
 
