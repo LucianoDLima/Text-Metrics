@@ -2,6 +2,11 @@ interface AproxTimeProps {
   readingTime: string;
 }
 
+/**
+ * Display the estimated time to read the text
+ * 
+ * @param readingTime - The estimated time to read the text
+ */
 export function AproxTime({ readingTime }: AproxTimeProps) {
   return (
     <p
