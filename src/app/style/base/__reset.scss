@@ -34,7 +34,8 @@ label {
 }
 
 /* Remove default button styling */
-button {
+button,
+input {
   border: 0;
 }
 
@@ -54,7 +55,8 @@ picture {
 /* Inherit fonts for inputs and buttons */
 input,
 button,
-select {
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
