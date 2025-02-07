@@ -2,6 +2,8 @@ import { Header } from '@widgets/header';
 import './layout.scss';
 import { Hero } from '@widgets/hero';
 import { TextArea } from '@features/textArea';
+import { TextMetricsProvider } from '@features/textArea/provider/textMetrics/textMetrics';
+import { CheckFiltersProvider } from '@features/textArea/provider/checkFilters/checkFilters';
 
 export function Layout() {
   return (
@@ -13,9 +15,13 @@ export function Layout() {
           <Hero />
         </section>
 
-        <section className='block__text-area'>
-          <TextArea />
-        </section>
+          <CheckFiltersProvider>
+        <TextMetricsProvider>
+            <section className='block__text-area'>
+              <TextArea />
+            </section>
+        </TextMetricsProvider>
+          </CheckFiltersProvider>
       </main>
     </div>
   );

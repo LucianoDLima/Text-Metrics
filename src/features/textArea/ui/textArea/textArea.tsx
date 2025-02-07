@@ -1,11 +1,12 @@
-import { useCheckBox, useTextMetric } from '@features/textArea/hooks';
 import { CheckBox } from '../checkBox/checkBox';
 import { ExceedError } from '../exceedError/exceedError';
 import { AproxTime } from '../aproxTime/aproxTime';
+import { useCheckFilters, useTextMetrics } from '@features/textArea/provider';
 import './textArea.scss';
 
 export function TextArea() {
-  const { countWords, readingTime, letterCount } = useTextMetric();
+  const { countWords, readingTime, letterCount } =
+    useTextMetrics();
 
   const {
     spaceChecked,
@@ -14,7 +15,7 @@ export function TextArea() {
     toggleSpace,
     toggleLimit,
     handleCharLimit,
-  } = useCheckBox();
+  } = useCheckFilters();
 
   return (
     <div className='text-area'>
@@ -25,8 +26,11 @@ export function TextArea() {
           onChange={countWords}
         />
 
-        {letterCount > Number(charLimit) && charLimit && (
-          <ExceedError charAmount={charLimit} exceedAmount={charLimit - letterCount} />
+        {letterCount.letters > Number(charLimit) && charLimit && (
+          <ExceedError
+            charAmount={charLimit}
+            exceedAmount={charLimit - letterCount.letters}
+          />
         )}
       </div>
 
