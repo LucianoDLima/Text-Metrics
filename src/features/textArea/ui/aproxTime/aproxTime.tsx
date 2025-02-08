@@ -4,7 +4,7 @@ interface AproxTimeProps {
 
 /**
  * Display the estimated time to read the text
- * 
+ *
  * @param readingTime - The estimated time to read the text
  */
 export function AproxTime({ readingTime }: AproxTimeProps) {
@@ -14,7 +14,7 @@ export function AproxTime({ readingTime }: AproxTimeProps) {
       data-testid='aprox-time'
     >
       Approx. reading time: {readingTime} minute
-      {readingTime !== '<1' && Number(readingTime) > 1 ? 's' : ''}
+      {Number(readingTime) === 0 || Number(readingTime) > 1 ? 's' : ''}
     </p>
   );
 }

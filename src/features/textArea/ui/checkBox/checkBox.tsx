@@ -27,7 +27,7 @@ export function CheckBox({
 }: CheckBoxProps) {
   return (
     <div className='checkbox'>
-      <div>
+      <div data-testid={id}>
         <input
           id={id}
           type='checkbox'

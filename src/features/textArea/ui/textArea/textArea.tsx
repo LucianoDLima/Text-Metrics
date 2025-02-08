@@ -1,21 +1,15 @@
-import { CheckBox } from '../checkBox/checkBox';
 import { ExceedError } from '../exceedError/exceedError';
-import { AproxTime } from '../aproxTime/aproxTime';
 import { useCheckFilters, useTextMetrics } from '@features/textArea/provider';
 import './textArea.scss';
+import { AreaInformation } from '../areaInformation/areaInformation';
 
 export function TextArea() {
-  const { countWords, readingTime, letterCount } =
-    useTextMetrics();
+  const { countWords, letterCount } = useTextMetrics();
 
-  const {
-    spaceChecked,
-    limitChecked,
-    charLimit,
-    toggleSpace,
-    toggleLimit,
-    handleCharLimit,
-  } = useCheckFilters();
+  const { charLimit, limitChecked } = useCheckFilters();
+
+  const exceedErrorChecks =
+    limitChecked && charLimit && letterCount.letters > Number(charLimit);
 
   return (
     <div className='text-area'>
@@ -26,7 +20,7 @@ export function TextArea() {
           onChange={countWords}
         />
 
-        {letterCount.letters > Number(charLimit) && charLimit && (
+        {exceedErrorChecks && (
           <ExceedError
             charAmount={charLimit}
             exceedAmount={charLimit - letterCount.letters}
@@ -34,43 +28,7 @@ export function TextArea() {
         )}
       </div>
 
-      <div className='text-area__filter'>
-        <form className='text-area__filter text-clr--secondary'>
-          <CheckBox
-            id='space'
-            checked={spaceChecked}
-            checkboxHandler={toggleSpace}
-            label='Exclude Spaces'
-          />
-
-          <CheckBox
-            id='limit'
-            checked={limitChecked}
-            checkboxHandler={toggleLimit}
-            label='Set Charater Limit'
-          >
-            <div className='text-area__filter__limit-input'>
-              <label
-                className='screen-reader'
-                htmlFor='limit-input'
-              >
-                Type the character limit
-              </label>
-
-              <input
-                className='filter__ch-limit  border-clr--primary fs-body--sm'
-                id='limit-input'
-                type='text'
-                min={1}
-                value={charLimit}
-                onChange={handleCharLimit}
-              />
-            </div>
-          </CheckBox>
-        </form>
-
-        <AproxTime readingTime={readingTime} />
-      </div>
+      <AreaInformation />
     </div>
   );
 }
