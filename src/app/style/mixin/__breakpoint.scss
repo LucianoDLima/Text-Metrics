@@ -1,0 +1,17 @@
+@mixin bp-mobile--L() {
+  @media screen and (max-width: 27em) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: 48em) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (max-width: 64.25em) {
+    @content;
+  }
+}
