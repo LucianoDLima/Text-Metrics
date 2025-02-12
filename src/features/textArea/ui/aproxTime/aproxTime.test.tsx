@@ -8,7 +8,7 @@ describe('AproxTime component', () => {
     render(<AproxTime readingTime='0' />);
 
     expect(screen.getByTestId('aprox-time')).toHaveTextContent(
-      /Approx. reading time: 0 minute$/
+      /Approx. reading time: 0 minutes$/
     );
   });
 
