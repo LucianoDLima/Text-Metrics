@@ -15,7 +15,7 @@ export function TextArea() {
   const { charLimit, limitChecked } = useCheckFilters();
 
   const exceedErrorChecks =
-    limitChecked && charLimit && letterCount.letters > Number(charLimit);
+    limitChecked && charLimit && letterCount > Number(charLimit);
 
   return (
     <div className='text-area'>
@@ -35,7 +35,7 @@ export function TextArea() {
             data-testid='exceed-error-icon'
           />{' '}
           Limit reached! Your text exceeds {charLimit} characters. (
-          {charLimit - letterCount.letters})
+          {charLimit - letterCount})
         </span>
       )}
     </div>

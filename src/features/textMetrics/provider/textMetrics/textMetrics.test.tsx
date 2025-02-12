@@ -33,9 +33,11 @@ describe('TextMetricsProvider', () => {
       target: { value: 'Hello world! I am here.' },
     });
 
+    expect(screen.getByRole('textbox')).toHaveValue('Hello world! I am here.');
     expect(screen.getByText(/Word Count:/)).toHaveTextContent('5');
     expect(screen.getByText(/Sentence Count:/)).toHaveTextContent('2');
     expect(screen.getByText(/Letter Count:/)).toHaveTextContent('23');
+    expect(screen.getByText(/Reading Time:/)).toHaveTextContent('1');
   });
 
   it('throws error when useTextMetrics is used outside provider', () => {
@@ -62,7 +64,7 @@ function MockComponent() {
     <div>
       <div>Word Count: {wordCount}</div>
       <div>Sentence Count: {sentenceCount}</div>
-      <div>Letter Count: {letterCount.letters}</div>
+      <div>Letter Count: {letterCount}</div>
       <div>Reading Time: {readingTime}</div>
       <textarea onChange={(e) => countWords(e)} />
     </div>

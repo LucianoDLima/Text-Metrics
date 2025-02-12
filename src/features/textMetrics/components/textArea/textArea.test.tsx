@@ -10,7 +10,7 @@ import { TextArea } from './textArea';
 vi.mock('@features/textMetrics/provider', () => ({
   useTextMetrics: vi.fn(() => ({
     countWords: vi.fn(),
-    letterCount: { letters: 0 },
+    letterCount: 0,
   })),
 
   useCheckFilters: vi.fn(() => ({
@@ -27,7 +27,7 @@ describe('TextArea Component', () => {
 
     (useTextMetrics as Mock).mockReturnValue({
       countWords: mockCountWords,
-      letterCount: { letters: 0 },
+      letterCount: 0,
     });
 
     (useCheckFilters as Mock).mockReturnValue({
@@ -57,7 +57,7 @@ describe('TextArea Component', () => {
   it('shows exceed error message when character limit is exceeded', () => {
     (useTextMetrics as Mock).mockReturnValue({
       countWords: mockCountWords,
-      letterCount: { letters: 25 },
+      letterCount: 25,
     });
     (useCheckFilters as Mock).mockReturnValue({
       charLimit: 20,
@@ -72,7 +72,7 @@ describe('TextArea Component', () => {
   it('does not show exceed error message when under the character limit', () => {
     (useTextMetrics as Mock).mockReturnValue({
       countWords: mockCountWords,
-      letterCount: { letters: 15 },
+      letterCount: 15,
     });
     (useCheckFilters as Mock).mockReturnValue({
       charLimit: 20,
@@ -87,7 +87,7 @@ describe('TextArea Component', () => {
   it('does not show exceed error message when over the character limit but limit checkbox is toggled off', () => {
     (useTextMetrics as Mock).mockReturnValue({
       countWords: mockCountWords,
-      letterCount: { letters: 25 },
+      letterCount: 25,
     });
     (useCheckFilters as Mock).mockReturnValue({
       charLimit: 20,

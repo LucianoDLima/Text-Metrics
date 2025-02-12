@@ -1,4 +1,4 @@
-import { TReadingTime } from "@features/textMetrics/model/types";
+import { TReadingTime } from '@features/textMetrics/model/types';
 
 interface AproxTimeProps {
   readingTime: TReadingTime;
@@ -12,7 +12,7 @@ interface AproxTimeProps {
 export function AproxTime({ readingTime }: AproxTimeProps) {
   return (
     <p data-testid='aprox-time'>
-      Approx. reading time: {readingTime} minute
+      Approx. reading time: {readingTime === 0.1 ? '<1' : readingTime} minute
       {Number(readingTime) === 0 || Number(readingTime) > 1 ? 's' : ''}
     </p>
   );

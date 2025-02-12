@@ -1,2 +1,2 @@
 export type TCharLimit = number | '';
-export type TReadingTime = number | '<1';
+export type TReadingTime = number;
