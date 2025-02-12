@@ -1,0 +1,31 @@
+@use '@app/style/mixin/_breakpoint' as *;
+
+.area-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+  color: var(--clr-text-secondary);
+
+  @include tablet {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  form {
+    display: flex;
+    gap: 24px;
+
+    @include tablet {
+      gap: 10px;
+      flex-direction: column;
+    }
+  }
+
+  &__limit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

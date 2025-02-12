@@ -3,3 +3,4 @@ export { LightModeIcon } from './ui/lightModeIcon';
 export { DarkModeLogoIcon } from './ui/darkModeLogoIcon';
 export { LightModeLogoIcon } from './ui/lightModeLogoIcon';
 export { InfoIcon } from './ui/infoIcon';
+export { CheckIcon } from './ui/checkIcon';
