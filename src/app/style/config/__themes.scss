@@ -1,3 +1,10 @@
+:root {
+  // General
+  --clr-accent-primary: var(--rclr-purple-200);
+  --clr-accent-secondary: var(--rclr-yellow-500);
+  --clr-accent-tertiary: var(--rclr-orange-350);
+}
+
 [data-theme='dark'] {
   background: url('/assets/images/bg-dark-theme.png');
 
@@ -11,6 +18,7 @@
   --clr-accent-error: var(--rclr-orange-350);
 
   --clr-border-primary: var(--rclr-neutral-800);
+  --clr-border-secondary: var(--rclr-neutral-200);
 }
 
 [data-theme='light'] {
@@ -26,4 +34,5 @@
   --clr-accent-error: var(--rclr-orange-450);
 
   --clr-border-primary: var(--rclr-neutral-100);
+  --clr-border-secondary: var(--rclr-neutral-800);
 }
