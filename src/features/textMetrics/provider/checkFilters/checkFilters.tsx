@@ -27,19 +27,27 @@ export function CheckFiltersProvider({ children }: CheckFiltersProviderProps) {
   const [limitChecked, setLimitChecked] = useState(false);
   const [charLimit, setCharLimit] = useState<TCharLimit>('');
 
-  function toggleSpace(e: React.ChangeEvent<HTMLInputElement>) {
+  function toggleSpace(e: ChangeEvent<HTMLInputElement>) {
     setSpaceChecked(e.target.checked);
   }
 
-  function toggleLimit(e: React.ChangeEvent<HTMLInputElement>) {
+  function toggleLimit(e: ChangeEvent<HTMLInputElement>) {
     setLimitChecked(e.target.checked);
   }
 
-  function handleCharLimit(e: React.ChangeEvent<HTMLInputElement>) {
-    // Only accepts numbers and limits the input to 5 characters
-    const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+  function handleCharLimit(e: ChangeEvent<HTMLInputElement>) {
+    // Limits the input to 5 characters
+    const value = e.target.value.slice(0, 5);
+
+    // Can't start with 0
+    if (value === '0') return;
+
+    // Accept nothing but numbers
+    if (isNaN(+value)) return;
+
     setCharLimit(value === '' ? '' : Number(value));
   }
+
   return (
     <CheckFilters.Provider
       value={{
